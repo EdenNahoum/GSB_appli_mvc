@@ -6753,5 +6753,10 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+.panel-info >.CFHF{
+    color: black ;
+    background-color: orange;
+    border-color: orangered;
+}  
 }
 /*# sourceMappingURL=bootstrap.css.map */

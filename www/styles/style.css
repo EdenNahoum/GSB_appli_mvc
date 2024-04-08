@@ -1,3 +1,15 @@
 .header {
     margin-top: 10px;
 }
+
+.CFHF{
+        color:black !important;
+    background-color: orangered !important;
+    border-color: orangered !important;
+}
+
+.CV{
+    color: #FFFFFF;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}

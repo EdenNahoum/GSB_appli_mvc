@@ -141,6 +141,7 @@ function estTableauEntiers($tabEntiers) {
         if (!estEntierPositif($unEntier)) {
             $boolReturn = false;
         }
+      
     }
     return $boolReturn;
 }
@@ -288,6 +289,21 @@ function getMoisPrecedent($mois){
     }
     else{
         $numMois--;
+    }
+     if (strlen($numMois) == 1) {//strlen=verifie le nombre de caractères. Ex:si mois=6, on va mettre 06.
+        $numMois = '0' . $numMois;
+        }
+    return $numAnnee.$numMois;
+}
+function getMoisSuivant($mois){
+    $numAnnee = substr($mois, 0, 4);
+    $numMois = substr($mois, 4, 2);
+    if($numMois=='12'){
+        $numMois='01';
+        $numAnnee++;
+    }
+    else{
+        $numMois++;
     }
      if (strlen($numMois) == 1) {//strlen=verifie le nombre de caractères. Ex:si mois=6, on va mettre 06.
         $numMois = '0' . $numMois;

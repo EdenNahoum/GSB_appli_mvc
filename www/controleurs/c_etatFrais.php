@@ -24,11 +24,20 @@ case 'selectionnerMois':
     // les mois étant triés décroissants
     $lesCles = array_keys($lesMois);
     $moisASelectionner = $lesCles[0];
+    $mois = getMois(date('d/m/Y'));
+    var_dump($mois);
+    $leMois = filter_input(INPUT_POST, 'lstMois', FILTER_SANITIZE_STRING);
+    $DerniersMois = douzeDerniersMois($mois);
+    var_dump($DerniersMois,$leMois);
+    $moisASelectionner = $leMois;
     include 'vues/v_listeMois.php';
     break;
 case 'voirEtatFrais':
+    $mois = getMois(date('d/m/Y'));
+    var_dump($mois);
     $leMois = filter_input(INPUT_POST, 'lstMois', FILTER_SANITIZE_STRING);
-    $lesMois = $pdo->getLesMoisDisponibles($idVisiteur);
+    $DerniersMois = douzeDerniersMois($mois);
+    var_dump($DerniersMois,$leMois);
     $moisASelectionner = $leMois;
     include 'vues/v_listeMois.php';
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $leMois);

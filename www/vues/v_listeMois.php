@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * Vue Liste des mois
@@ -26,7 +28,7 @@
                 <label for="lstMois" accesskey="n">Mois : </label>
                 <select id="lstMois" name="lstMois" class="form-control">
                     <?php
-                    foreach ($lesMois as $unMois) {
+                    foreach ($DerniersMois as $unMois) {
                         $mois = $unMois['mois'];
                         $numAnnee = $unMois['numAnnee'];
                         $numMois = $unMois['numMois'];
