@@ -46,5 +46,8 @@
                 </div>
             </div>
         </div>
+        <a href="index.php?uc=gererFrais&action=saisirFrais"
+                           class="btn btn-success" role="button">
+                            <br>Modifier mon mot de passe</a>
     </div>
 </div>

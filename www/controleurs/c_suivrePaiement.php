@@ -19,10 +19,13 @@ $uc = 'suivrePaiement';
 $idVisiteur = filter_input(INPUT_POST, 'lstVisiteur', FILTER_SANITIZE_STRING);
 $leMois = filter_input(INPUT_POST, 'lstMois', FILTER_SANITIZE_STRING);
 $etat = 'VA';
-$visiteur = $pdo->GetVisiteurVA($etat);
-$DerniersMois = $pdo->GetMoisVA($etat);
+$moisASelectionner = $leMois;
+var_dump($moisASelectionner);
 switch ($action) {
     case 'suivrePaiement':
+        $visiteur = $pdo->GetVisiteurVA($etat);
+        $DerniersMois = $pdo->GetMoisVA($etat);
+        var_dump($DerniersMois);
         include 'vues/v_suivrePaiement.php';
         break;
     case 'validerSuiviPaiement':
@@ -36,5 +39,13 @@ switch ($action) {
         $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
         $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
         include 'vues/v_etatFraisComptable.php';
+        break;
+    case 'mettreAuPaiement':
+        $idVisiteur = filter_input(INPUT_POST, 'lstVisiteur', FILTER_SANITIZE_STRING);
+        $leMois = filter_input(INPUT_POST, 'lstMois', FILTER_SANITIZE_STRING);
+        $etat = 'RB';
+        $pdo->majEtatFicheFrais($idVisiteur, $leMois, $etat);
+        var_dump($etat, $idVisiteur, $leMois);
+        include 'vues/v_comptable.php';
         break;
 }

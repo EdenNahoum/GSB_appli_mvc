@@ -38,12 +38,31 @@
 
 class PdoGsb
 {
-    private static $serveur = 'mysql:host=localhost';
-    private static $bdd = 'dbname=gsb_frais';
-    private static $user = 'userGsb';
-    private static $mdp = 'secret';
-    private static $monPdo;
-    private static $monPdoGsb = null;
+    // Adresse IP de l'utilisateur qui accède au PHP
+    //private static $adresseIP = $_SERVER['REMOTE_ADDR'];
+    // Liste des adresses IP associées à localhost
+    //private static  $adressesLocalhost = array('127.0.0.1', '::1');
+   
+    // Vérifier si l'adresse IP est dans la liste des adresses localhost
+    //if(in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) { // Connexion en localhost
+        
+        //if (in_array($adresseIP, $adressesLocalhost)) { // Connexion en localhost
+		private static $serveur = 'mysql:host=localhost';
+		private static $bdd = 'dbname=gsb_frais';
+		private static $user = 'userGsb';
+		private static $mdp = 'secret';
+		private static $monPdo;
+		private static $monPdoGsb = null;
+    /*} else { // Connexion externe
+       
+        private static $serveur = 'mysql:host=db5015860719.hosting-data.io';
+        private static $bdd = 'dbname=dbs12931205';
+        private static $user = 'dbu2134307';
+        private static $mdp = '6CWVpyx4*Ej@r+z';
+        private static $monPdo;
+        private static $monPdoGsb = null;
+        
+    }*/
 
     /**
      * Constructeur privé, crée l'instance de PDO qui sera sollicitée

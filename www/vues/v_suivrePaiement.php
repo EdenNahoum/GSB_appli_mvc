@@ -24,12 +24,12 @@
                             ?>
                             <option selected value="<?php echo $id ?>">
                                 <?php echo $nom . ' ' . $prenom ?> </option>
-                                <?php
+                            <?php
                         } else {
                             ?>
                             <option value="<?php echo $id ?>">
                                 <?php echo $nom . ' ' . $prenom ?> </option>
-                                <?php
+                            <?php
                         }
                     }
                     ?>    
@@ -58,17 +58,20 @@
                             ?>
                             <option selected value="<?php echo $mois ?>">
                                 <?php echo $numMois . '/' . $numAnnee ?> </option>
-                                <?php
+                            <?php
                         } else {
                             ?>
                             <option value="<?php echo $mois ?>">
                                 <?php echo $numMois . '/' . $numAnnee ?> </option>
-                                <?php
+                            <?php
                         }
                     }
                     ?>    
 
                 </select>
                 <input id="ok" type="submit" value="Valider" class="btn btn-success" 
-                   role="button">
-                </form>           
+                       role="button">
+            </div>
+            </div>
+        </div>
+            </form>           
